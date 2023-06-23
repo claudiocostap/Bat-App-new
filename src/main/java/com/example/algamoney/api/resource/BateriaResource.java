@@ -3,6 +3,7 @@ package com.example.algamoney.api.resource;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
+import com.example.algamoney.api.model.Pessoa;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.data.domain.Page;
@@ -68,14 +69,18 @@ public class BateriaResource {
 		return ResponseEntity.ok(bateriaSalva);
 	}
 
-	@GetMapping
+	@GetMapping("/pesquisar")
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PESSOA')")
-	public Page<Bateria> pesquisar(@RequestParam(required = false, defaultValue = "%") String nome, Pageable pageable) {
+	public Page<Bateria> pesquisarNome(@RequestParam(required = false, defaultValue = "%") String nome, Pageable pageable) {
 		return bateriaRepository.findByNomeContaining(nome, pageable);
 	}
 
-	
-	
+	@GetMapping
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PESSOA')")
+	public Page<Bateria> pesquisar(@RequestParam(required = false) Pageable pageable) {
+		return bateriaRepository.findAll(pageable);
+	}
+
 	@PutMapping("/{codigo}/{quantidade}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_PESSOA') and #oauth2.hasScope('write')")

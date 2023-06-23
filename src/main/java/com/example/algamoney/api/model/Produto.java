@@ -18,7 +18,22 @@ public class Produto {
 
     private double valor;
 
+    private String descricao;
+
     private int quantidade;
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
 
     public Long getCodigo() {
         return codigo;

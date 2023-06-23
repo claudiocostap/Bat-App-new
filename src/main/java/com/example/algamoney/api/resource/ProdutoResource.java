@@ -2,6 +2,7 @@ package com.example.algamoney.api.resource;
 
 import com.example.algamoney.api.event.RecursoCriadoEvent;
 import com.example.algamoney.api.model.Bateria;
+import com.example.algamoney.api.model.Pessoa;
 import com.example.algamoney.api.model.Produto;
 import com.example.algamoney.api.repository.BateriaRepository;
 import com.example.algamoney.api.repository.ProdutoRepository;
@@ -61,7 +62,7 @@ public class ProdutoResource {
 		return ResponseEntity.ok(produtoSalvo);
 	}
 
-	@GetMapping
+	@GetMapping("/pesquisar")
 	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PESSOA')")
 	public Page<Produto> pesquisar(@RequestParam(required = false, defaultValue = "%") String nome, Pageable pageable) {
 		return produtoRepository.findByNomeContaining(nome, pageable);
@@ -74,5 +75,11 @@ public class ProdutoResource {
 	@PreAuthorize("hasAuthority('ROLE_CADASTRAR_PESSOA') and #oauth2.hasScope('write')")
 	public void atualizarQuantidade(@PathVariable Long codigo, @PathVariable int quantidade) {
 		produtoService.atualizarQuantidade(codigo, quantidade);
+	}
+
+	@GetMapping
+	@PreAuthorize("hasAuthority('ROLE_PESQUISAR_PESSOA')")
+	public Page<Produto> pesquisar(@RequestParam(required = false) Pageable pageable) {
+		return produtoRepository.findAll(pageable);
 	}
 }
