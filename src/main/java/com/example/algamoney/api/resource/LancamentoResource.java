@@ -31,8 +31,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.algamoney.api.dto.LancamentoEstatisticaCategoria;
-import com.example.algamoney.api.dto.LancamentoEstatisticaDia;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaCategoria;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaDia;
 import com.example.algamoney.api.event.RecursoCriadoEvent;
 import com.example.algamoney.api.exceptionhandler.AlgamoneyExceptionHandler.Erro;
 import com.example.algamoney.api.model.Lancamento;

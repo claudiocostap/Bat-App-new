@@ -6,9 +6,9 @@ import java.util.List;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import com.example.algamoney.api.dto.LancamentoEstatisticaCategoria;
-import com.example.algamoney.api.dto.LancamentoEstatisticaDia;
-import com.example.algamoney.api.dto.LancamentoEstatisticaPessoa;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaCategoria;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaDia;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaPessoa;
 import com.example.algamoney.api.model.Lancamento;
 import com.example.algamoney.api.repository.filter.LancamentoFilter;
 import com.example.algamoney.api.repository.projection.ResumoLancamento;

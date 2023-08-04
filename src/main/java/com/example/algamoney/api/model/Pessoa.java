@@ -11,6 +11,9 @@ import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import java.time.LocalDate;
+import java.util.Date;
+
 @Entity
 @Table(name = "pessoa")
 public class Pessoa {
@@ -22,6 +25,17 @@ public class Pessoa {
     @NotNull
     private String nome;
 
+    @NotNull
+    private String cpf;
+
+    @NotNull
+    private String rg;
+
+    @NotNull
+    private String foneContato;
+
+    @NotNull
+    private LocalDate dataNascimento;
 
     private String cargo;
 
@@ -38,6 +52,38 @@ public class Pessoa {
 
     @NotNull
     private Boolean ativo;
+
+    public String getFoneContato() {
+        return foneContato;
+    }
+
+    public void setFoneContato(String foneContato) {
+        this.foneContato = foneContato;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getRg() {
+        return rg;
+    }
+
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public LocalDate getDataNascimento() {
+        return dataNascimento;
+    }
+
+    public void setDataNascimento(LocalDate dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 
     public Long getCodigo() {
         return codigo;

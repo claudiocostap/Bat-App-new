@@ -1,4 +1,4 @@
-package com.example.algamoney.api.dto;
+package com.example.algamoney.api.event.dto;
 
 import java.math.BigDecimal;
 

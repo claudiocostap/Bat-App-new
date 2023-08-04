@@ -17,9 +17,9 @@ import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.StringUtils;
 
-import com.example.algamoney.api.dto.LancamentoEstatisticaCategoria;
-import com.example.algamoney.api.dto.LancamentoEstatisticaDia;
-import com.example.algamoney.api.dto.LancamentoEstatisticaPessoa;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaCategoria;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaDia;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaPessoa;
 import com.example.algamoney.api.model.Categoria_;
 import com.example.algamoney.api.model.Lancamento;
 import com.example.algamoney.api.model.Lancamento_;

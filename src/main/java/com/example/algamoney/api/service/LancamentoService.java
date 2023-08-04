@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.example.algamoney.api.dto.LancamentoEstatisticaPessoa;
+import com.example.algamoney.api.event.dto.LancamentoEstatisticaPessoa;
 import com.example.algamoney.api.model.Lancamento;
 import com.example.algamoney.api.model.Pessoa;
 import com.example.algamoney.api.repository.LancamentoRepository;
